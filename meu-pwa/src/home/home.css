@@ -1,43 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+import "./home.css"
+import Component from "../component/component";
+import { useEffect, useState, useMemo } from "react"
+const home = () => {
+    const [item, setItem] = useState("");
+    const [arrayitems, setArrayitems] = useState([]);
+    useEffect(() => {
+        getList();
+    }, []);
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family:"Quicksand", sans-serif;
+    const getList = () => {
+        const items = JSON.parse(localStorage.getItem("item")) || [];
+        setArrayitems(items);
+    };
+    const handleChange = (event) => {
+        setItem(event.target.value);
+    };
+
+
+    const handleClick = () => {
+        if (item.trim() !== "") {
+            const items = JSON.parse(localStorage.getItem("item")) || [];
+            const updatedItems = [...items, item];
+            localStorage.setItem("item", JSON.stringify(updatedItems));
+            setItem(""); // Limpa o input após adicionar o item
+        }
+    };
+
+    const printList = useMemo(() => {
+        if (arrayitems && arrayitems.length > 0) {
+            {
+                <ul className="div-component">
+                    {arrayitems.map((item, index) => (
+                        <div className="component">
+                            <Component key={index} item={item} qtd="2" />
+
+                        </div>
+                    ))}
+                </ul>
+            }
+        }
+
+    }, [arrayitems])
+
+    return (
+        <>
+            <div className="header">
+                <img src="./public/512x512.png" alt="Logo" />
+            </div>
+            <h1 className="titulo">Bem vindo a sua lista</h1>
+
+            <div className="center">
+                <input type="text" name="add" id="add" value={item} onChange={handleChange} />
+                <button className="button" onClick={handleClick}>Adicionar</button>
+            </div>
+            <ul className="div-component">
+                {arrayitems.map((item, index) => (
+                    <div className="component">
+                        <Component key={index} item={item} qtd="2" />
+
+                    </div>
+                ))}
+            </ul>
+        </>
+    );
 }
-body{
-    background-color: #EEEEEE;
-}
-.center{
-    display: flex;
-    justify-content: center;
-}
-h1{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-img{
-    width: 60px;
-    height: 60px;
-    padding: 5px;
-}
-.button{
-    background-color: #db5b53;
-    padding: 1%;
-    margin-left: 1%;
-    border: none;
-    cursor: pointer;
-    font-weight: 800;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px rgb(56, 56, 56);
-}
-input{
-    border-radius: 5px;
-    width: 13.5rem;
-}
-.header{
-    margin-bottom: 5rem;
-    border-bottom: 3px solid #A3C9AA;
-    margin-inline: 20px;
-}
+export default home;
