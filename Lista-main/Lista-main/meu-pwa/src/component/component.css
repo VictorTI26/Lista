@@ -1,0 +1,22 @@
+.component{
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 5px;
+    background-color:#A3C9AA;
+    display: flex;
+    align-items: center;
+    padding-inline: 5rem;
+}
+li{
+    list-style: none;
+}
+ul{
+    display:grid ;
+    justify-content: center;
+}
+button{
+    margin-left: 20px;
+}
+p{
+    margin-left: 20px;
+}
