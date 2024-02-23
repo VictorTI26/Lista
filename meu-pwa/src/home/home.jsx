@@ -1,5 +1,5 @@
 import "./home.css"
-import List from "../list/list";
+import List from "../component/list";
 import { useState, useEffect } from "react";
 const home = ()=>{
     const [item, setItem] = useState("");
