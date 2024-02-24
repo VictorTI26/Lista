@@ -69,14 +69,14 @@ const Home = () => {
             <div className="header">
                 <img src="./public/512x512.png" alt="Logo" />
             </div>
-            <h1 className="titulo">Bem vindo a sua lista</h1>
+            <h1 className="titulo">Lista de compras</h1>
 
             <div className="center">
-                <input type="text" name="add" id="add" value={item} onChange={handleChange} />
+                <input type="text" name="add" id="add" placeholder=" Digite o produto" maxLength={30} value={item} onChange={handleChange} />
                 <div onClick={handleMinus}>
                     <p className="negativo">-</p>
                 </div>
-                <input type="text" name="mais" id="btnAdicionar" value={quantidade} onChange={handleQtdChange}/>
+                <input type="text" name="mais" id="btnAdicionar" minLength={0} value={quantidade} onChange={handleQtdChange}/>
                 <div onClick={handlePlus}>
                     <p className="positivo">+</p>
                 </div>

@@ -1,11 +1,11 @@
 .component{
     padding: 1rem;
-    margin: 2rem;
+    margin: 1rem;
     border-radius: 5px;
     background-color:#A3C9AA;
     display: flex;
     align-items: center;
-    padding-inline: 5rem;
+    width: 27rem;
 }
 li{
     list-style: none;

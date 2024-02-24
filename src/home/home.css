@@ -11,6 +11,7 @@ body{
 .center{
     display: flex;
     justify-content: center;
+    margin-bottom: 3rem;
 }
 h1{
     display: flex;
@@ -43,6 +44,7 @@ img{
     justify-content: space-between;
     width: 30%;
     align-items: center;
+
 }
 #add{
     border-radius: 5px;
@@ -73,3 +75,4 @@ img{
     font-size: 20px;
     cursor: pointer;
 }
+
