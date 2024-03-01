@@ -20,3 +20,49 @@ button{
 p{
     margin-left: 20px;
 }
+
+@media (max-width:550px){
+
+    #btnAdicionar{
+        padding:0.5rem;
+    }
+
+    .negativo{
+        padding: 10px;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .positivo{
+        padding: 10px;
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    #add{
+        width: 10rem;
+        height: 2rem;
+    }
+    .titulo{
+        font-size: 40px;
+    }
+
+    .component{
+        width: 20rem;
+    }
+    .button{
+        padding: 0.3em 0.6em;
+        font-size: 0.7em;
+        font-weight: 500;
+    }
+
+    li{
+        font-size: 11px;
+    }
+
+    .card {
+      padding: 2em;
+    }
+    
+    
+    
+    }
